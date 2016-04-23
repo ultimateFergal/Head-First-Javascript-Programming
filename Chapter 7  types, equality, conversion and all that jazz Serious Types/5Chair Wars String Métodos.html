@@ -1,0 +1,84 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<title>5Chair Wars String Métodos</title>
+	<meta charset="utf-8">
+	<script>
+		//Larry forma 1
+		function validate(phoneNumber) {
+			if (phoneNumber.length !== 8) {
+				return false;
+			}
+			for (var i = 0; i < phoneNumber.length; i++) {
+				if (i === 3) {
+					if (phoneNumber.charAt(i) !== '-') {
+						return false;
+					}
+				} else if (isNaN(phoneNumber.charAt(i))) {
+					return false;
+				}
+			}
+			return true;
+		}
+		//Brad forma 2
+		function validate(phoneNumber) {
+			if (phoneNumber.length !== 8) {
+				return false;
+			}
+			var first = phoneNumber.substring(0,3);
+			var second = phoneNumber.substring(4);
+			if (phoneNumber.charAt(3) !== "-" || isNaN(first) || isNaN(second)) {
+				return false;
+			}
+			return true;
+		}
+
+		//Con el guión opcional, larry
+		function validate(phoneNumber) {
+			if (phoneNumber.length > 8 || phoneNumber.length < 7) {
+				return false;
+			}
+			for (var i = 0; i < phoneNumber.length; i++) {
+				if (i === 3) {
+					if (phoneNumber.length === 8 && phoneNumber.charAt(i) !== '-') {
+						return false;
+					} else if (phoneNumber.length === 7 && isNaN(phoneNumber.charAt(i))) {
+						return false;
+					}
+				} else if (isNaN(phoneNumber.charAt(i))) {
+					return false;
+				}
+			}
+			return true;
+		}
+
+		//COn el guión opcional, Brad
+		function validate1(phoneNumber) {
+			if (phoneNumber.length > 8 || phoneNumber.length < 7) {
+				return false;
+			}
+
+			console.log(phoneNumber);
+			var first = phoneNumber.substring(0,3);
+			var second = phoneNumber.substring(phoneNumber.length - 4);
+			if (isNaN(first) || isNaN(second)) {
+				return false;
+			}
+			if (phoneNumber.length === 8) {
+				return (phoneNumber.charAt(3) === "-");
+			}
+			return true;
+		}
+
+		//Supersimplificado amy
+		function validate(phoneNumber) {
+			return phoneNumber.match(/^\d{3}-?\d{4}$/);
+		}
+
+		console.log(validate1("317-2345"));
+
+	</script>
+</head>
+<body></body>
+</html>

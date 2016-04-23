@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Objetos_perro</title>
+	<script>
+	//Creacion de objeto perro, acceso a propiedades y modificación de las mismas desde auera
+	var dog = {
+		name: "Fido",
+		weight: 20.2,
+		age: 4,
+		breed: "mixed",
+		activity: "fetch balls"
+	};
+	var bark;
+	if (dog.age > 20) {
+		bark = "WOOF WOOF";
+	} else {
+		bark = "woof woof";
+	}
+	var speak = dog.name + " says " + bark + " when he wants to " + dog.activity;
+	console.log(speak);
+
+	//Para borrar propiedades
+	delete dog.age;
+
+	//Muestra en consola Información del objeto
+	console.log(dog); 
+</script>
+</head>
+<body></body>
+</html>

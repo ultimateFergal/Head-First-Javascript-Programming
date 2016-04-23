@@ -1,0 +1,47 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<title>3Lie Detector</title>
+	<meta charset="utf-8">
+	<script>
+	//Métodos y propiedades de Strings
+	var text = "YOU SHOULD NEVER SHOUT WHEN TYPING";
+	var presentableText = text.toLowerCase();
+	if (presentableText.length > 0) {
+		alert(presentableText);
+	}
+
+	var emot = "XOxxOO";
+	var hugs = 0;
+	var kisses = 0;
+	emot = emot.trim();
+	console.log("after trim: " + emot);
+	emot = emot.toUpperCase();
+	console.log("After toUpperCase: " + emot);
+	for(var i = 0; i < emot.length ; i++) {
+		if (emot.charAt(i) === "X") {
+			hugs++;
+		} else if (emot.charAt(i) == "O") {
+			kisses++;
+		}
+	}
+	console.log(hugs);
+	console.log(kisses);
+
+	//Strings primitivos y strings objetos
+
+	var name = "Jenny";
+	var phone = "867-5309";
+	var fact = "This is a prime number";
+	var songName = phone + "/" + name;
+	console.log(songName);
+	var index = phone.indexOf("-");
+	if (fact.substring(10, 15) === "prime") {
+		alert(fact);
+	}
+	console.log(fact.substring(10, 15));
+</script>
+</head>
+<body></body>
+</html>

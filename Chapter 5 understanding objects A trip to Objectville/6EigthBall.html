@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>6EigthBall</title>
+	<meta charset="utf-8">
+	<script>
+		//Métodos en los objetos
+		var eightBall = { 
+			index: 0,
+			advice: ["yes", "no", "maybe", "not a chance"],
+			shake: function() {
+				this.index = this.index + 1;
+				if (this.index >= this.advice.length) {
+					this.index = 0;
+				}
+			},
+			look: function() {
+				return this.advice[this.index];
+			}
+		};
+		eightBall.shake();
+		console.log(eightBall.look());
+
+		//For in(For each) permite ver las propiedades de un objeto
+		var chevy = {
+			make: "Chevy",
+			model: "Bel Air",
+			year: 1957,
+			color: "red",
+			passengers: 2,
+			convertible: false,
+			mileage: 1021
+		};
+
+		for (var prop in chevy) {
+			console.log(prop + ": " + chevy[prop]);
+		}
+
+		//Dos formas de acceder a las propiedades de un objeto
+		//chevy["color"] ó chevy.color ó chevy["co" + "lor"]
+	</script>
+</head>
+<body></body>
+</html>

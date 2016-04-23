@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title> Image Guess </title>
+	<style> 
+		body { margin: 20px; } 
+		img { margin: 20px; }
+	</style>
+	<script> 
+		window.onload = init;
+		function init() {
+			var images = document.getElementsByTagName("img");
+			for (var i = 0; i < images.length; i++) {
+				//Con diferntes tipos de eventos de mouse
+				images[i].onclick = showAnswer;
+				//images[i].onmouseover = showAnswer;
+				//images[i].onmouseout = showAnswer;
+			}
+		}
+		// function showImageZero() {
+		// 	var image = document.getElementById("zero");
+		// 	image.src = "zero.jpg";
+		// }
+		// function showImageOne() {
+		// 	var image = document.getElementById("one");
+		// 	image.src = "one.jpg";
+		// }
+		// function showImageTwo() {
+		// 	var image = document.getElementById("two");
+		// 	image.src = "two.jpg";
+		// }
+		// function showImageThree() {
+		// 	var image = document.getElementById("three");
+		// 	image.src = "three.jpg";
+		// }
+		// function showImageFour() {
+		// 	var image = document.getElementById("four");
+		// 	image.src = "four.jpg";
+		// }	
+		// function showImageFive() {
+		// 	var image = document.getElementById("five");
+		// 	image.src = "five.jpg";
+		// }		
+		//en´via el nombre de la imagen respectiva como objeto para recuperarlo y asignarla a la nueva imagen clara
+		function showAnswer(eventObj) {
+			var image = eventObj.target;
+			var name = image.id;
+			name = name + ".jpg";
+			image.src = name;
+
+			//parar poner borrosa de nuevo la imagen automaticamente despues de un tiempo, otro handler dentro de un handler
+			setTimeout(reblur, 2000, image);
+		}
+
+		//parar poner borrosa de nuevo la imagen
+		function reblur(image) {
+			var name = image.id;
+			name = name + "blur.jpg";
+			image.src = name;
+		}
+	</script>
+</head>
+<body>
+	<img id="zero" src="zeroblur.jpg">
+	<img id="one" src="oneblur.jpg">
+	<img id="two" src="twoblur.jpg">
+	<img id="three" src="threeblur.jpg">
+	<img id="four" src="fourblur.jpg">
+	<img id="five" src="fiveblur.jpg">
+</body>

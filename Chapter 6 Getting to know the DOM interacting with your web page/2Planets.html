@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Planets</title>
+	<style>
+		.redtext { color: red; }
+	</style>
+	<script>
+		//CSS en un atributo
+		//Onload con getElementById y setAtribute en el elemento obtenido, tipo de atributo y nombre, hay getAtribut y setAtribute, innerHtml es para cambiar el texto dentro del objeto recibido y todo lo que haya de hijos del elementos también
+		function init() {
+			var planet = document.getElementById("greenplanet");
+			planet.innerHTML = "Red Alert: hit by phaser fire!";
+			planet.setAttribute("class", "redtext");
+		}
+		window.onload = init;
+	</script>
+</head>
+<body>
+	<h1>Green Planet</h1>
+	<p id="greenplanet">All is well</p>
+	<h1>Red Planet</h1>
+	<p id="redplanet">Nothing to report</p>
+	<h1>Blue Planet</h1>
+	<p id="blueplanet">All systems A-OK</p>
+</body>
+</html>
